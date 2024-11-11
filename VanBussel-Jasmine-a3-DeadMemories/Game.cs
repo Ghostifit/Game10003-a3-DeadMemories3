@@ -11,7 +11,16 @@ namespace Game10003
     public class Game
     {
         // Place your variables here:
+        Vector2 rectangleLocation = new Vector2(0, 400);
+        Vector2 rectangleSize = new Vector2(800, 550);
+        Vector2 circleLocation = new Vector2(100, 400);
+        Vector2 circleLastPosition = new Vector2(200, 200);
+        float circleDirection = 20f;
+        int circleRadius = 40;
+        Player player = new Player();
 
+
+        float recTopangle = 200f;
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -27,8 +36,8 @@ namespace Game10003
         /// </summary>
         public void Update()
         {
-            Window.ClearBackground(Color.Gray);
-
+            Window.ClearBackground(Color.DarkGray);
+            /*
             //Ground
             Draw.FillColor = Color.DarkGray;
             Draw.LineColor = Color.Black;
@@ -42,7 +51,7 @@ namespace Game10003
             Draw.LineSize = 2;
             float[] xcoords = new float[100];
             float[] ycoords = new float[100];
-
+            
             //Circle Character
             xcoords[0] = 100;
             ycoords[0] = 00;
@@ -53,7 +62,7 @@ namespace Game10003
                 float y = ycoords[i];
                 Draw.Circle(x, y, 45);
             }
-
+            
             //Square Character
             xcoords[0] = 350;
             ycoords[0] = 480;
@@ -74,6 +83,41 @@ namespace Game10003
                 float x = xcoords[i];
                 float y = ycoords[i];
                 Draw.Triangle(600, 350, 650, 450, 550, 450);
+            }
+            */
+
+            {
+                circleLastPosition = circleLocation;
+                Draw.FillColor = Color.Black;
+                Draw.Rectangle(rectangleLocation, rectangleSize);
+
+                Draw.FillColor = Color.LightGray;
+                Draw.Circle(circleLocation, circleRadius);
+
+                circleLocation.Y += 1;
+                RectangleCollision();
+                Jump();
+            }
+
+
+        }
+
+        public void RectangleCollision()
+        {
+            bool isColliding = circleLocation.Y >= 400f;
+
+
+            if (isColliding == true)
+            {
+                circleLocation = circleLastPosition;
+            }
+        }
+        public void Jump()
+        {
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                circleLocation.Y -= 25f;
+
             }
         }
     }
