@@ -79,14 +79,13 @@ namespace Game10003
             }
             
             //Triangle Character
-            xcoords[0] = 300;
-            ycoords[0] = 430;
+           
 
             for (int i = 0; i < 1; i++)
             {
                 float x = xcoords[i];
                 float y = ycoords[i];
-                Draw.Triangle(600, 350, 650, 450, 550, 460);
+                Draw.Triangle(600, 250, 625, 300, 575, 300);
             }
             
 
