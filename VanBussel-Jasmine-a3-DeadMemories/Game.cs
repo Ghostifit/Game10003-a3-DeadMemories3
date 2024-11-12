@@ -19,11 +19,8 @@ namespace Game10003
         float circleDirection = 20f;
         float jumpHeight = 100f;
         float circleRadius = 40;
-        float objSpeed = 5;
-        Player player = new Player();
-
-
         float recTopangle = 200f;
+        int enemyType = 0;
         bool isOnGround = false;
 
         /// <summary>
@@ -79,8 +76,6 @@ namespace Game10003
             }
             
             //Triangle Character
-           
-
             for (int i = 0; i < 1; i++)
             {
                 float x = xcoords[i];
@@ -102,6 +97,8 @@ namespace Game10003
                 Jump();
             }
 
+            
+            
 
         }
 

@@ -4,6 +4,7 @@ using System.Numerics;
 namespace Game10003
 {
     public class Player
+        
     {
         Vector2 circleLocation = new Vector2(200, 200);
         int CircleRadius = 10;

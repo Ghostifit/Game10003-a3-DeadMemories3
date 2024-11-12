@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace VanBussel_Jasmine_a3_DeadMemories
-{
+{/*
     public class Circle
     {
         private float radius;
@@ -15,4 +15,6 @@ namespace VanBussel_Jasmine_a3_DeadMemories
         private float friction;
     }
  
+}
+    */
 }
