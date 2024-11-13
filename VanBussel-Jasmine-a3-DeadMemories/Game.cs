@@ -16,11 +16,17 @@ namespace Game10003
         Vector2 circleLocation = new Vector2(100, 360);
         Vector2 circleLastPosition = new Vector2(200, 200);
         Vector2 squareLocation = new Vector2(300, 335);
+        static Enemies Enemy1 = new Enemies();
+        static enemies2 Enemy2 = new enemies2(); 
+        
         float circleDirection = 20f;
         float jumpHeight = 100f;
         float circleRadius = 40;
         float recTopangle = 200f;
+
+        int gravitySpeed = 5;
         int enemyType = 0;
+
         bool isOnGround = false;
 
         /// <summary>
@@ -38,51 +44,12 @@ namespace Game10003
         public void Update()
         {
             Window.ClearBackground(Color.DarkGray);
-            /*
-            //Ground
-            Draw.FillColor = Color.DarkGray;
-            Draw.LineColor = Color.Black;
-            Draw.LineSize = 2;
-            Draw.Rectangle(-10, 545, 800, 600);
-
-            */
-            //BODIES
-            Draw.FillColor = Color.Gray;
-            Draw.LineColor = Color.Black;
-            Draw.LineSize = 2;
-            float[] xcoords = new float[100];
-            float[] ycoords = new float[100];
-            /*
-            //Circle Character
-            xcoords[0] = 100;
-            ycoords[0] = 00;
-
-            for (int i = 0; i < 1; i++)
-            {
-                float x = xcoords[i];
-                float y = ycoords[i];
-                Draw.Circle(x, y, 45);
-            }
-            */
+           
             //Square Character
-            xcoords[0] = 300;
-            ycoords[0] = 350;
+            Enemy1.DrawEnemies();
 
-            for (int i = 0; i < 1; i++)
-            {
-                float x = xcoords[i];
-                float y = ycoords[i];
-                Draw.Square(x - 2, y, 55);
-            }
-            
-            //Triangle Character
-            for (int i = 0; i < 1; i++)
-            {
-                float x = xcoords[i];
-                float y = ycoords[i];
-                Draw.Triangle(600, 250, 625, 300, 575, 300);
-            }
-            
+            //Triangle character
+            Enemy2.DrawEnemies2();
 
             {
                 circleLastPosition = circleLocation;
@@ -97,28 +64,24 @@ namespace Game10003
                 Jump();
             }
 
-            
-            
-
         }
 
         public void RectangleCollision()
         {
             bool isColliding = circleLocation.Y >= 400f - circleRadius;
             
-
             if (isColliding == true)
             {
                 circleLocation.Y = circleLastPosition.Y;
                 isOnGround = true;
             }
-
         }
         public void Jump()
         {
             if (Input.IsKeyboardKeyPressed(KeyboardInput.Space) && isOnGround)
             {
                 circleLocation.Y -= jumpHeight;
+                circleLastPosition.Y += 10 * gravitySpeed * Time.DeltaTime * 100;
                 isOnGround = false;
             }
         }
