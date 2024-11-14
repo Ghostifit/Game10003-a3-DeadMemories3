@@ -20,9 +20,9 @@ namespace Game10003
             {
                 Draw.Triangle(x1, y1, x2, y2, x3, y3);
             }
-            x1 -= 5;
-            x2 -= 5;
-            x3 -= 5;
+            x1 -= 2;
+            x2 -= 2;
+            x3 -= 2;
         }
     }
 }

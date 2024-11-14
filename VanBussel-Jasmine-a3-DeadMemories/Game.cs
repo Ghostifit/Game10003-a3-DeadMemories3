@@ -45,6 +45,13 @@ namespace Game10003
         {
             Window.ClearBackground(Color.DarkGray);
            
+            //BODIES
+            Draw.FillColor = Color.Gray;
+            Draw.LineColor = Color.Black;
+            Draw.LineSize = 2;
+            float[] xcoords = new float[100];
+            float[] ycoords = new float[100];
+            
             //Square Character
             Enemy1.DrawEnemies();
 
