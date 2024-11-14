@@ -19,7 +19,7 @@ namespace Game10003
 
         public void DrawEnemies()
         {
-
+              
             for (int i = 0; i < enemies.Length ; i++)
             {
                 Draw.Square(x, y, 55);
@@ -39,7 +39,7 @@ namespace Game10003
 
             
             {
-                
+                //Waigh, the nightmare is over
             }
         }
     }
